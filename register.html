@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LVinnamon - Register</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="location.html">Location</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Register</h1>
+    <form id="register-form" onsubmit="validateForm(event)">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="region">Region:</label>
+        <input type="text" id="region" name="region" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+      </div>
+      <div class="form-group">
+        <label for="terms">I agree to the terms and conditions:</label>
+        <input type="checkbox" id="terms" name="terms" required>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; Group 1 - 2023 LVinnamon. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault(); 
+      
+      
+      var name = document.getElementById("name").value;
+      var gender = document.getElementById("gender").value;
+      var region = document.getElementById("region").value;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirm-password").value;
+      var terms = document.getElementById("terms").checked;
+      
+    
+      if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+      }
+      
+      document.getElementById("register-form").submit();
+    }
+  </script>
+</body>
+</html>
+
